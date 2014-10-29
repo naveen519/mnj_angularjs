@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="asapModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="asapEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_TabletPassCode" EntityType="asapModel.tbl_TabletPassCode" />
+    <EntitySet Name="tblAssets" EntityType="asapModel.tblAsset" />
+    <EntitySet Name="tblAssignedCompanies" EntityType="asapModel.tblAssignedCompany" />
+    <EntitySet Name="tblAssignedLocations" EntityType="asapModel.tblAssignedLocation" />
+    <EntitySet Name="tblAuditComments" EntityType="asapModel.tblAuditComment" />
+    <EntitySet Name="tblAudits" EntityType="asapModel.tblAudit" />
+    <EntitySet Name="tblAuditStatus" EntityType="asapModel.tblAuditStatu" />
+    <EntitySet Name="tblCategories" EntityType="asapModel.tblCategory" />
+    <EntitySet Name="tblCheckLists" EntityType="asapModel.tblCheckList" />
+    <EntitySet Name="tblChklstCntrlTypes" EntityType="asapModel.tblChklstCntrlType" />
+    <EntitySet Name="tblControls" EntityType="asapModel.tblControl" />
+    <EntitySet Name="tblCorrectiveActionRevisions" EntityType="asapModel.tblCorrectiveActionRevision" />
+    <EntitySet Name="tblCorrectiveActions" EntityType="asapModel.tblCorrectiveAction" />
+    <EntitySet Name="tblGroupHeaders" EntityType="asapModel.tblGroupHeader" />
+    <EntitySet Name="tblGrowers" EntityType="asapModel.tblGrower" />
+    <EntitySet Name="tblImages" EntityType="asapModel.tblImage" />
+    <EntitySet Name="tblLocations" EntityType="asapModel.tblLocation" />
+    <EntitySet Name="tblNonUsers" EntityType="asapModel.tblNonUser" />
+    <EntitySet Name="tblQuestions" EntityType="asapModel.tblQuestion" />
+    <EntitySet Name="tblReportTypes" EntityType="asapModel.tblReportType" />
+    <EntitySet Name="tblRoles" EntityType="asapModel.tblRole" />
+    <EntitySet Name="tblStates" EntityType="asapModel.tblState" />
+    <EntitySet Name="tblTemps" EntityType="asapModel.tblTemp" />
+    <EntitySet Name="tblThirdparty_types" EntityType="asapModel.tblThirdparty_types" />
+    <EntitySet Name="tblUsers" EntityType="asapModel.tblUser" />
+    <AssociationSet Name="FK_tbl_TabletPassCode_tblGrowers" Association="asapModel.FK_tbl_TabletPassCode_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tbl_TabletPassCode" EntitySet="tbl_TabletPassCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAssets_tblUsers" Association="asapModel.FK_tblAssets_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAssets" EntitySet="tblAssets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAssignedCompany_tblGrowers" Association="asapModel.FK_tblAssignedCompany_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tblAssignedCompany" EntitySet="tblAssignedCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAssignedCompany_tblUsers" Association="asapModel.FK_tblAssignedCompany_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAssignedCompany" EntitySet="tblAssignedCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblAudits" Association="asapModel.FK_tblAuditComments_tblAudits">
+      <End Role="tblAudits" EntitySet="tblAudits" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblAudits1" Association="asapModel.FK_tblAuditComments_tblAudits1">
+      <End Role="tblAudits" EntitySet="tblAudits" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblCheckList" Association="asapModel.FK_tblAuditComments_tblCheckList">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblCheckList1" Association="asapModel.FK_tblAuditComments_tblCheckList1">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblQuestions" Association="asapModel.FK_tblAuditComments_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAuditComments_tblQuestions1" Association="asapModel.FK_tblAuditComments_tblQuestions1">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblAuditComments" EntitySet="tblAuditComments" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tblAudits_InspstatusId" Association="asapModel.fk_tblAudits_InspstatusId">
+      <End Role="tblAuditStatus" EntitySet="tblAuditStatus" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAudits_tblAuditStatus" Association="asapModel.FK_tblAudits_tblAuditStatus">
+      <End Role="tblAuditStatus" EntitySet="tblAuditStatus" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAudits_tblCheckList" Association="asapModel.FK_tblAudits_tblCheckList">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAudits_tblGrowers" Association="asapModel.FK_tblAudits_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAudits_tblLocations" Association="asapModel.FK_tblAudits_tblLocations">
+      <End Role="tblLocations" EntitySet="tblLocations" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAudits_tblUsers" Association="asapModel.FK_tblAudits_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblAudits" EntitySet="tblAudits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCorrectiveActions_tblAudits" Association="asapModel.FK_tblCorrectiveActions_tblAudits">
+      <End Role="tblAudits" EntitySet="tblAudits" />
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsers_UserID" Association="asapModel.FK_tblUsers_UserID">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCategory" EntitySet="tblCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCheckList_tblGrowers" Association="asapModel.FK_tblCheckList_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCheckList_tblUsers" Association="asapModel.FK_tblCheckList_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChklstCntrlTypes_tblCheckList" Association="asapModel.FK_tblChklstCntrlTypes_tblCheckList">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblChklstCntrlTypes" EntitySet="tblChklstCntrlTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCorrectiveActions_tblCheckList" Association="asapModel.FK_tblCorrectiveActions_tblCheckList">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestions_tblCheckList" Association="asapModel.FK_tblQuestions_tblCheckList">
+      <End Role="tblCheckList" EntitySet="tblCheckLists" />
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChklstCntrlTypes_tblControls" Association="asapModel.FK_tblChklstCntrlTypes_tblControls">
+      <End Role="tblControls" EntitySet="tblControls" />
+      <End Role="tblChklstCntrlTypes" EntitySet="tblChklstCntrlTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblChklstCntrlTypes_tblQuestions" Association="asapModel.FK_tblChklstCntrlTypes_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblChklstCntrlTypes" EntitySet="tblChklstCntrlTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCorrectiveActions_tblLocations" Association="asapModel.FK_tblCorrectiveActions_tblLocations">
+      <End Role="tblLocations" EntitySet="tblLocations" />
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCorrectiveActions_tblQuestions" Association="asapModel.FK_tblCorrectiveActions_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCorrectiveActions_tblUsers" Association="asapModel.FK_tblCorrectiveActions_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNonUser_tblCorrectiveActions" Association="asapModel.FK_tblNonUser_tblCorrectiveActions">
+      <End Role="tblCorrectiveActions" EntitySet="tblCorrectiveActions" />
+      <End Role="tblNonUser" EntitySet="tblNonUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGroupHeader_tblGrowers" Association="asapModel.FK_tblGroupHeader_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tblGroupHeader" EntitySet="tblGroupHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestions_tblGroupHeader" Association="asapModel.FK_tblQuestions_tblGroupHeader">
+      <End Role="tblGroupHeader" EntitySet="tblGroupHeaders" />
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUser_UserID" Association="asapModel.FK_tblUser_UserID">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblGroupHeader" EntitySet="tblGroupHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGrowers_tblUsers" Association="asapModel.FK_tblGrowers_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocations_tblGrowers" Association="asapModel.FK_tblLocations_tblGrowers">
+      <End Role="tblGrowers" EntitySet="tblGrowers" />
+      <End Role="tblLocations" EntitySet="tblLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblImages_tblQuestions" Association="asapModel.FK_tblImages_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblImages" EntitySet="tblImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblRoles_tblUsers" Association="asapModel.FK_tblRoles_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblRoles" EntitySet="tblRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_TabletPassCode">
+    <Key>
+      <PropertyRef Name="TabletPassCodeId" />
+    </Key>
+    <Property Name="TabletPassCodeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TabletId" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MACAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PassCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GrowerId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tbl_TabletPassCode_tblGrowers" FromRole="tbl_TabletPassCode" ToRole="tblGrowers" />
+  </EntityType>
+  <EntityType Name="tblAsset">
+    <Key>
+      <PropertyRef Name="AssetId" />
+    </Key>
+    <Property Name="AssetId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AssetName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Asset_ID" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AssetDesc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="LocationName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblAssets_tblUsers" FromRole="tblAssets" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblAssignedCompany">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GrowerId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tblAssignedCompany_tblGrowers" FromRole="tblAssignedCompany" ToRole="tblGrowers" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblAssignedCompany_tblUsers" FromRole="tblAssignedCompany" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblAssignedLocation">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AssignedTo" Type="Int32" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="AssignedBy" Type="Int32" Nullable="false" />
+    <Property Name="AssignedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblAuditComment">
+    <Key>
+      <PropertyRef Name="AnsId" />
+    </Key>
+    <Property Name="AnsId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditId" Type="Int32" Nullable="false" />
+    <Property Name="QuestionId" Type="Int32" Nullable="false" />
+    <Property Name="ChecklistId" Type="Int32" Nullable="false" />
+    <Property Name="FieldNotes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Answer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="GivenScore" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PossibleScore" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tblAudit" Relationship="asapModel.FK_tblAuditComments_tblAudits" FromRole="tblAuditComments" ToRole="tblAudits" />
+    <NavigationProperty Name="tblAudit1" Relationship="asapModel.FK_tblAuditComments_tblAudits1" FromRole="tblAuditComments" ToRole="tblAudits" />
+    <NavigationProperty Name="tblCheckList" Relationship="asapModel.FK_tblAuditComments_tblCheckList" FromRole="tblAuditComments" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblCheckList1" Relationship="asapModel.FK_tblAuditComments_tblCheckList1" FromRole="tblAuditComments" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblQuestion" Relationship="asapModel.FK_tblAuditComments_tblQuestions" FromRole="tblAuditComments" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblQuestion1" Relationship="asapModel.FK_tblAuditComments_tblQuestions1" FromRole="tblAuditComments" ToRole="tblQuestions" />
+  </EntityType>
+  <EntityType Name="tblAudit">
+    <Key>
+      <PropertyRef Name="Audit_Id" />
+    </Key>
+    <Property Name="Audit_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditName" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateModifiled" Type="DateTime" Precision="3" />
+    <Property Name="ChecklistID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="GrowerId" Type="Int32" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="TabletAuditId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AdminId" Type="Int32" />
+    <Property Name="InspstatusId" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <NavigationProperty Name="tblAuditComments" Relationship="asapModel.FK_tblAuditComments_tblAudits" FromRole="tblAudits" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblAuditComments1" Relationship="asapModel.FK_tblAuditComments_tblAudits1" FromRole="tblAudits" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblAuditStatu" Relationship="asapModel.fk_tblAudits_InspstatusId" FromRole="tblAudits" ToRole="tblAuditStatus" />
+    <NavigationProperty Name="tblAuditStatu1" Relationship="asapModel.FK_tblAudits_tblAuditStatus" FromRole="tblAudits" ToRole="tblAuditStatus" />
+    <NavigationProperty Name="tblCheckList" Relationship="asapModel.FK_tblAudits_tblCheckList" FromRole="tblAudits" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tblAudits_tblGrowers" FromRole="tblAudits" ToRole="tblGrowers" />
+    <NavigationProperty Name="tblLocation" Relationship="asapModel.FK_tblAudits_tblLocations" FromRole="tblAudits" ToRole="tblLocations" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblAudits_tblUsers" FromRole="tblAudits" ToRole="tblUsers" />
+    <NavigationProperty Name="tblCorrectiveActions" Relationship="asapModel.FK_tblCorrectiveActions_tblAudits" FromRole="tblAudits" ToRole="tblCorrectiveActions" />
+  </EntityType>
+  <EntityType Name="tblAuditStatu">
+    <Key>
+      <PropertyRef Name="Status_Id" />
+    </Key>
+    <Property Name="Status_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="CorrectiveActionStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tblAudits" Relationship="asapModel.fk_tblAudits_InspstatusId" FromRole="tblAuditStatus" ToRole="tblAudits" />
+    <NavigationProperty Name="tblAudits1" Relationship="asapModel.FK_tblAudits_tblAuditStatus" FromRole="tblAuditStatus" ToRole="tblAudits" />
+  </EntityType>
+  <EntityType Name="tblCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CategoryCode" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblUsers_UserID" FromRole="tblCategory" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblCheckList">
+    <Key>
+      <PropertyRef Name="ChecklistID" />
+    </Key>
+    <Property Name="ChecklistID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckListName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+    <Property Name="GrowerId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ChecklistStatus" Type="Int32" Nullable="false" />
+    <Property Name="Owner" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Version" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Type" Type="Int32" />
+    <NavigationProperty Name="tblAuditComments" Relationship="asapModel.FK_tblAuditComments_tblCheckList" FromRole="tblCheckList" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblAuditComments1" Relationship="asapModel.FK_tblAuditComments_tblCheckList1" FromRole="tblCheckList" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblAudits" Relationship="asapModel.FK_tblAudits_tblCheckList" FromRole="tblCheckList" ToRole="tblAudits" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tblCheckList_tblGrowers" FromRole="tblCheckList" ToRole="tblGrowers" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblCheckList_tblUsers" FromRole="tblCheckList" ToRole="tblUsers" />
+    <NavigationProperty Name="tblChklstCntrlTypes" Relationship="asapModel.FK_tblChklstCntrlTypes_tblCheckList" FromRole="tblCheckList" ToRole="tblChklstCntrlTypes" />
+    <NavigationProperty Name="tblCorrectiveActions" Relationship="asapModel.FK_tblCorrectiveActions_tblCheckList" FromRole="tblCheckList" ToRole="tblCorrectiveActions" />
+    <NavigationProperty Name="tblQuestions" Relationship="asapModel.FK_tblQuestions_tblCheckList" FromRole="tblCheckList" ToRole="tblQuestions" />
+  </EntityType>
+  <EntityType Name="tblChklstCntrlType">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ControlCnt" Type="Int32" Nullable="false" />
+    <Property Name="ControlId" Type="Int32" Nullable="false" />
+    <Property Name="Inputs" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ChecklistId" Type="Int32" Nullable="false" />
+    <Property Name="QuestionId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblCheckList" Relationship="asapModel.FK_tblChklstCntrlTypes_tblCheckList" FromRole="tblChklstCntrlTypes" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblControl" Relationship="asapModel.FK_tblChklstCntrlTypes_tblControls" FromRole="tblChklstCntrlTypes" ToRole="tblControls" />
+    <NavigationProperty Name="tblQuestion" Relationship="asapModel.FK_tblChklstCntrlTypes_tblQuestions" FromRole="tblChklstCntrlTypes" ToRole="tblQuestions" />
+  </EntityType>
+  <EntityType Name="tblControl">
+    <Key>
+      <PropertyRef Name="ControlId" />
+    </Key>
+    <Property Name="ControlId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Controlname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="tblChklstCntrlTypes" Relationship="asapModel.FK_tblChklstCntrlTypes_tblControls" FromRole="tblControls" ToRole="tblChklstCntrlTypes" />
+  </EntityType>
+  <EntityType Name="tblCorrectiveActionRevision">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CorrectiveActionId" Type="Int32" Nullable="false" />
+    <Property Name="RevisionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCorrectiveAction">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CorrectiveAction" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AuditId" Type="Int32" Nullable="false" />
+    <Property Name="QuestionId" Type="Int32" Nullable="false" />
+    <Property Name="ChecklistId" Type="Int32" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CompletedByDate" Type="DateTime" Precision="3" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+    <Property Name="VerificationDate" Type="DateTime" Precision="3" />
+    <Property Name="RootCause" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ResultingAction" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="VerifiedBy" Type="Int32" />
+    <Property Name="VerifiedName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AssignedTo" Type="Int32" />
+    <Property Name="NonUser" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CorrectiveActionStatus" Type="Int32" />
+    <Property Name="CorrectiveActionRevisionStatus" Type="Int32" />
+    <NavigationProperty Name="tblAudit" Relationship="asapModel.FK_tblCorrectiveActions_tblAudits" FromRole="tblCorrectiveActions" ToRole="tblAudits" />
+    <NavigationProperty Name="tblCheckList" Relationship="asapModel.FK_tblCorrectiveActions_tblCheckList" FromRole="tblCorrectiveActions" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblLocation" Relationship="asapModel.FK_tblCorrectiveActions_tblLocations" FromRole="tblCorrectiveActions" ToRole="tblLocations" />
+    <NavigationProperty Name="tblQuestion" Relationship="asapModel.FK_tblCorrectiveActions_tblQuestions" FromRole="tblCorrectiveActions" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblCorrectiveActions_tblUsers" FromRole="tblCorrectiveActions" ToRole="tblUsers" />
+    <NavigationProperty Name="tblNonUsers" Relationship="asapModel.FK_tblNonUser_tblCorrectiveActions" FromRole="tblCorrectiveActions" ToRole="tblNonUser" />
+  </EntityType>
+  <EntityType Name="tblGroupHeader">
+    <Key>
+      <PropertyRef Name="GroupHeaderId" />
+    </Key>
+    <Property Name="GroupHeaderId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupHeaderName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="GrowerID" Type="Int32" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tblGroupHeader_tblGrowers" FromRole="tblGroupHeader" ToRole="tblGrowers" />
+    <NavigationProperty Name="tblQuestions" Relationship="asapModel.FK_tblQuestions_tblGroupHeader" FromRole="tblGroupHeader" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblUser_UserID" FromRole="tblGroupHeader" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblGrower">
+    <Key>
+      <PropertyRef Name="GrowerId" />
+    </Key>
+    <Property Name="GrowerId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GrowerName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyPhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ClientContact" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModyfiedBy" Type="Int32" />
+    <Property Name="ModyfiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="tbl_TabletPassCode" Relationship="asapModel.FK_tbl_TabletPassCode_tblGrowers" FromRole="tblGrowers" ToRole="tbl_TabletPassCode" />
+    <NavigationProperty Name="tblAssignedCompanies" Relationship="asapModel.FK_tblAssignedCompany_tblGrowers" FromRole="tblGrowers" ToRole="tblAssignedCompany" />
+    <NavigationProperty Name="tblAudits" Relationship="asapModel.FK_tblAudits_tblGrowers" FromRole="tblGrowers" ToRole="tblAudits" />
+    <NavigationProperty Name="tblCheckLists" Relationship="asapModel.FK_tblCheckList_tblGrowers" FromRole="tblGrowers" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblGroupHeaders" Relationship="asapModel.FK_tblGroupHeader_tblGrowers" FromRole="tblGrowers" ToRole="tblGroupHeader" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblGrowers_tblUsers" FromRole="tblGrowers" ToRole="tblUsers" />
+    <NavigationProperty Name="tblLocations" Relationship="asapModel.FK_tblLocations_tblGrowers" FromRole="tblGrowers" ToRole="tblLocations" />
+  </EntityType>
+  <EntityType Name="tblImage">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionId" Type="Int32" />
+    <Property Name="AuditId" Type="Int32" />
+    <Property Name="CorrectiveActonID" Type="Int32" />
+    <Property Name="FileName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="Int32" />
+    <NavigationProperty Name="tblQuestion" Relationship="asapModel.FK_tblImages_tblQuestions" FromRole="tblImages" ToRole="tblQuestions" />
+  </EntityType>
+  <EntityType Name="tblLocation">
+    <Key>
+      <PropertyRef Name="Location_Id" />
+    </Key>
+    <Property Name="Location_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Vision" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Location_Title" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Location_Desc" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="GrowerId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblAudits" Relationship="asapModel.FK_tblAudits_tblLocations" FromRole="tblLocations" ToRole="tblAudits" />
+    <NavigationProperty Name="tblCorrectiveActions" Relationship="asapModel.FK_tblCorrectiveActions_tblLocations" FromRole="tblLocations" ToRole="tblCorrectiveActions" />
+    <NavigationProperty Name="tblGrower" Relationship="asapModel.FK_tblLocations_tblGrowers" FromRole="tblLocations" ToRole="tblGrowers" />
+  </EntityType>
+  <EntityType Name="tblNonUser">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" />
+    <Property Name="NonUserId" Type="Int32" Nullable="false" />
+    <Property Name="NonUser" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tblCorrectiveAction" Relationship="asapModel.FK_tblNonUser_tblCorrectiveActions" FromRole="tblNonUser" ToRole="tblCorrectiveActions" />
+  </EntityType>
+  <EntityType Name="tblQuestion">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionSeries" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CheckListId" Type="Int32" Nullable="false" />
+    <Property Name="PossibleScore" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="GroupHeaderID" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Guidance" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="tblAuditComments" Relationship="asapModel.FK_tblAuditComments_tblQuestions" FromRole="tblQuestions" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblAuditComments1" Relationship="asapModel.FK_tblAuditComments_tblQuestions1" FromRole="tblQuestions" ToRole="tblAuditComments" />
+    <NavigationProperty Name="tblCheckList" Relationship="asapModel.FK_tblQuestions_tblCheckList" FromRole="tblQuestions" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblChklstCntrlTypes" Relationship="asapModel.FK_tblChklstCntrlTypes_tblQuestions" FromRole="tblQuestions" ToRole="tblChklstCntrlTypes" />
+    <NavigationProperty Name="tblCorrectiveActions" Relationship="asapModel.FK_tblCorrectiveActions_tblQuestions" FromRole="tblQuestions" ToRole="tblCorrectiveActions" />
+    <NavigationProperty Name="tblGroupHeader" Relationship="asapModel.FK_tblQuestions_tblGroupHeader" FromRole="tblQuestions" ToRole="tblGroupHeader" />
+    <NavigationProperty Name="tblImages" Relationship="asapModel.FK_tblImages_tblQuestions" FromRole="tblQuestions" ToRole="tblImages" />
+  </EntityType>
+  <EntityType Name="tblReportType">
+    <Key>
+      <PropertyRef Name="ReportTypeID" />
+    </Key>
+    <Property Name="ReportTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ReportType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReportDescription" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUser" Relationship="asapModel.FK_tblRoles_tblUsers" FromRole="tblRoles" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblState">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="StateId" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblTemp">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="QuestionId" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblThirdparty_types">
+    <Key>
+      <PropertyRef Name="thirdparty_type_id" />
+    </Key>
+    <Property Name="thirdparty_type_id" Type="Int32" Nullable="false" />
+    <Property Name="thirdparty_type_name" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Firstname" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Lastname" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Address1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Datecreated" Type="DateTime" Precision="3" />
+    <Property Name="Datemodified" Type="DateTime" Precision="3" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="Modifiedby" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="ForgetPassword" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblAssets" Relationship="asapModel.FK_tblAssets_tblUsers" FromRole="tblUsers" ToRole="tblAssets" />
+    <NavigationProperty Name="tblAssignedCompanies" Relationship="asapModel.FK_tblAssignedCompany_tblUsers" FromRole="tblUsers" ToRole="tblAssignedCompany" />
+    <NavigationProperty Name="tblAudits" Relationship="asapModel.FK_tblAudits_tblUsers" FromRole="tblUsers" ToRole="tblAudits" />
+    <NavigationProperty Name="tblCategories" Relationship="asapModel.FK_tblUsers_UserID" FromRole="tblUsers" ToRole="tblCategory" />
+    <NavigationProperty Name="tblCheckLists" Relationship="asapModel.FK_tblCheckList_tblUsers" FromRole="tblUsers" ToRole="tblCheckList" />
+    <NavigationProperty Name="tblCorrectiveActions" Relationship="asapModel.FK_tblCorrectiveActions_tblUsers" FromRole="tblUsers" ToRole="tblCorrectiveActions" />
+    <NavigationProperty Name="tblGroupHeaders" Relationship="asapModel.FK_tblUser_UserID" FromRole="tblUsers" ToRole="tblGroupHeader" />
+    <NavigationProperty Name="tblGrowers" Relationship="asapModel.FK_tblGrowers_tblUsers" FromRole="tblUsers" ToRole="tblGrowers" />
+    <NavigationProperty Name="tblRoles" Relationship="asapModel.FK_tblRoles_tblUsers" FromRole="tblUsers" ToRole="tblRoles" />
+  </EntityType>
+  <Association Name="FK_tbl_TabletPassCode_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="0..1" />
+    <End Role="tbl_TabletPassCode" Type="asapModel.tbl_TabletPassCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tbl_TabletPassCode">
+        <PropertyRef Name="GrowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAssets_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblAssets" Type="asapModel.tblAsset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAssets">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAssignedCompany_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="1" />
+    <End Role="tblAssignedCompany" Type="asapModel.tblAssignedCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tblAssignedCompany">
+        <PropertyRef Name="GrowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAssignedCompany_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblAssignedCompany" Type="asapModel.tblAssignedCompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAssignedCompany">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblAudits">
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAudits">
+        <PropertyRef Name="Audit_Id" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="AuditId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblAudits1">
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAudits">
+        <PropertyRef Name="Audit_Id" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="AuditId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblCheckList">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblCheckList1">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblQuestions">
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAuditComments_tblQuestions1">
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="1" />
+    <End Role="tblAuditComments" Type="asapModel.tblAuditComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="tblAuditComments">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tblAudits_InspstatusId">
+    <End Role="tblAuditStatus" Type="asapModel.tblAuditStatu" Multiplicity="0..1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAuditStatus">
+        <PropertyRef Name="Status_Id" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="InspstatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAudits_tblAuditStatus">
+    <End Role="tblAuditStatus" Type="asapModel.tblAuditStatu" Multiplicity="1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAuditStatus">
+        <PropertyRef Name="Status_Id" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAudits_tblCheckList">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="ChecklistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAudits_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="GrowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAudits_tblLocations">
+    <End Role="tblLocations" Type="asapModel.tblLocation" Multiplicity="1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocations">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAudits_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblAudits">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCorrectiveActions_tblAudits">
+    <End Role="tblAudits" Type="asapModel.tblAudit" Multiplicity="1" />
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAudits">
+        <PropertyRef Name="Audit_Id" />
+      </Principal>
+      <Dependent Role="tblCorrectiveActions">
+        <PropertyRef Name="AuditId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsers_UserID">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="0..1" />
+    <End Role="tblCategory" Type="asapModel.tblCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCategory">
+        <PropertyRef Name="Createdby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCheckList_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="0..1" />
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tblCheckList">
+        <PropertyRef Name="GrowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCheckList_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCheckList">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChklstCntrlTypes_tblCheckList">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblChklstCntrlTypes" Type="asapModel.tblChklstCntrlType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblChklstCntrlTypes">
+        <PropertyRef Name="ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCorrectiveActions_tblCheckList">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblCorrectiveActions">
+        <PropertyRef Name="ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestions_tblCheckList">
+    <End Role="tblCheckList" Type="asapModel.tblCheckList" Multiplicity="1" />
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheckList">
+        <PropertyRef Name="ChecklistID" />
+      </Principal>
+      <Dependent Role="tblQuestions">
+        <PropertyRef Name="CheckListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChklstCntrlTypes_tblControls">
+    <End Role="tblControls" Type="asapModel.tblControl" Multiplicity="1" />
+    <End Role="tblChklstCntrlTypes" Type="asapModel.tblChklstCntrlType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblControls">
+        <PropertyRef Name="ControlId" />
+      </Principal>
+      <Dependent Role="tblChklstCntrlTypes">
+        <PropertyRef Name="ControlId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblChklstCntrlTypes_tblQuestions">
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="1" />
+    <End Role="tblChklstCntrlTypes" Type="asapModel.tblChklstCntrlType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="tblChklstCntrlTypes">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCorrectiveActions_tblLocations">
+    <End Role="tblLocations" Type="asapModel.tblLocation" Multiplicity="1" />
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocations">
+        <PropertyRef Name="Location_Id" />
+      </Principal>
+      <Dependent Role="tblCorrectiveActions">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCorrectiveActions_tblQuestions">
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="1" />
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="tblCorrectiveActions">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCorrectiveActions_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCorrectiveActions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNonUser_tblCorrectiveActions">
+    <End Role="tblCorrectiveActions" Type="asapModel.tblCorrectiveAction" Multiplicity="1" />
+    <End Role="tblNonUser" Type="asapModel.tblNonUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCorrectiveActions">
+        <PropertyRef Name="RecordId" />
+      </Principal>
+      <Dependent Role="tblNonUser">
+        <PropertyRef Name="NonUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGroupHeader_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="0..1" />
+    <End Role="tblGroupHeader" Type="asapModel.tblGroupHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tblGroupHeader">
+        <PropertyRef Name="GrowerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestions_tblGroupHeader">
+    <End Role="tblGroupHeader" Type="asapModel.tblGroupHeader" Multiplicity="0..1" />
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGroupHeader">
+        <PropertyRef Name="GroupHeaderId" />
+      </Principal>
+      <Dependent Role="tblQuestions">
+        <PropertyRef Name="GroupHeaderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUser_UserID">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="0..1" />
+    <End Role="tblGroupHeader" Type="asapModel.tblGroupHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblGroupHeader">
+        <PropertyRef Name="Createdby" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGrowers_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="0..1" />
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblGrowers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocations_tblGrowers">
+    <End Role="tblGrowers" Type="asapModel.tblGrower" Multiplicity="1" />
+    <End Role="tblLocations" Type="asapModel.tblLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGrowers">
+        <PropertyRef Name="GrowerId" />
+      </Principal>
+      <Dependent Role="tblLocations">
+        <PropertyRef Name="GrowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblImages_tblQuestions">
+    <End Role="tblQuestions" Type="asapModel.tblQuestion" Multiplicity="0..1" />
+    <End Role="tblImages" Type="asapModel.tblImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="tblImages">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblRoles_tblUsers">
+    <End Role="tblUsers" Type="asapModel.tblUser" Multiplicity="1" />
+    <End Role="tblRoles" Type="asapModel.tblRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblRoles">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

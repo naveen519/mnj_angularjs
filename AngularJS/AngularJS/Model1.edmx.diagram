@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bad88496f6644e049bdf5000798019c4" Name="Diagram1">
+        <EntityTypeShape EntityType="asapModel.tbl_TabletPassCode" Width="1.5" PointX="5.25" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAsset" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAssignedCompany" Width="1.5" PointX="5.25" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAssignedLocation" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAuditComment" Width="1.5" PointX="12.75" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAudit" Width="1.5" PointX="7.5" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblAuditStatu" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblCategory" Width="1.5" PointX="3" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblCheckList" Width="1.5" PointX="5.25" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblChklstCntrlType" Width="1.5" PointX="7.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblControl" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblCorrectiveActionRevision" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblCorrectiveAction" Width="1.5" PointX="15.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblGroupHeader" Width="1.5" PointX="5.25" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblGrower" Width="1.5" PointX="3" PointY="42.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblImage" Width="1.5" PointX="12.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblLocation" Width="1.5" PointX="5.25" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblNonUser" Width="1.5" PointX="18" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblQuestion" Width="1.5" PointX="10.5" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblReportType" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblRole" Width="1.5" PointX="3" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblState" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblTemp" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblThirdparty_types" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="asapModel.tblUser" Width="1.5" PointX="0.75" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="asapModel.FK_tbl_TabletPassCode_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAssets_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAssignedCompany_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAssignedCompany_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblAudits" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblAudits1" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblCheckList1" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAuditComments_tblQuestions1" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.fk_tblAudits_InspstatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAudits_tblAuditStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAudits_tblCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAudits_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAudits_tblLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblAudits_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCorrectiveActions_tblAudits" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblUsers_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCheckList_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCheckList_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblChklstCntrlTypes_tblCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCorrectiveActions_tblCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblQuestions_tblCheckList" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblChklstCntrlTypes_tblControls" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblChklstCntrlTypes_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCorrectiveActions_tblLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCorrectiveActions_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblCorrectiveActions_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblNonUser_tblCorrectiveActions" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblGroupHeader_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblQuestions_tblGroupHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblUser_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblGrowers_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblLocations_tblGrowers" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblImages_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="asapModel.FK_tblRoles_tblUsers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

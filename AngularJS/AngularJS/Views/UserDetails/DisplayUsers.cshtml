@@ -1,0 +1,80 @@
+﻿@model AngularJS.Models.UserModel
+@{
+    ViewBag.Title = "DisplayUsers";
+}
+
+<h2>DisplayUsers</h2>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#txtname").change(function () {
+            var name = $("#txtname").val();
+            $.ajax({
+                url: '/UserDetails/Userinformation',
+                url:'',
+                type: "post",
+                async: false,
+                succeess: function (result) {
+                    if (result == "True") {
+                    }
+                }
+
+            });
+
+        });
+    });
+   
+    var indexController = function ($scope, $http) {
+        debugger;
+        var resultPromise = $http.get('/UserDetails/Userinformation', function (data) {
+            debugger;
+            $scope.tweets = data;
+
+        });
+        //alert(resultPromise);
+       // resultPromise.success(function (data) {
+            debugger;
+           // $scope.tweets = data;
+            
+      
+        $scope.newTweets = {
+            0: "No new Tweets",
+            other: "{} new Tweets"
+        }
+    }
+    
+    //function customersController($scope, $http) {
+
+    //    // ADD THIS METHOD
+    //    $scope.RefreshUsers = function () {
+    //        var url = "/UserDetails/DisplayUsers";
+    //        $http.get(url).success(function (response) {
+    //            $scope.Users = response;
+    //        });
+    //    }
+
+    //}
+</script>
+@*<input name="btnRefreshUsers" id="btnRefreshUsers" type="submit"
+    onclick="RefreshUsers()" value="Refresh users list">*@
+
+<div ng-app="" ng-controller="indexController">
+<h3>
+  <ng-pluralize count="tweets.length" when="newTweets"></ng-pluralize>
+</h3>
+<table class="table table-striped">
+  <tr ng-repeat="item in tweets">
+   <td>
+    <img src="{{item.ImageUrl}}" />
+   </td>
+   <td>
+    <strong>{{item.Username}}</strong> <br />
+    {{item.Tweet}}
+   </td>
+  </tr>
+</table>
+<input type="text" id="txtname"  />    
+    <input type="submit"  value="save" />
+</div>

@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="asapModelStoreContainer" CdmEntityContainer="asapEntities">
+    <EntitySetMapping Name="tbl_TabletPassCode">
+      <EntityTypeMapping TypeName="asapModel.tbl_TabletPassCode">
+        <MappingFragment StoreEntitySet="tbl_TabletPassCode">
+          <ScalarProperty Name="TabletPassCodeId" ColumnName="TabletPassCodeId" />
+          <ScalarProperty Name="TabletId" ColumnName="TabletId" />
+          <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+          <ScalarProperty Name="PassCode" ColumnName="PassCode" />
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAssets">
+      <EntityTypeMapping TypeName="asapModel.tblAsset">
+        <MappingFragment StoreEntitySet="tblAssets">
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+          <ScalarProperty Name="Asset_ID" ColumnName="Asset_ID" />
+          <ScalarProperty Name="AssetDesc" ColumnName="AssetDesc" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAssignedCompanies">
+      <EntityTypeMapping TypeName="asapModel.tblAssignedCompany">
+        <MappingFragment StoreEntitySet="tblAssignedCompany">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAssignedLocations">
+      <EntityTypeMapping TypeName="asapModel.tblAssignedLocation">
+        <MappingFragment StoreEntitySet="tblAssignedLocations">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+          <ScalarProperty Name="AssignedOn" ColumnName="AssignedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAuditComments">
+      <EntityTypeMapping TypeName="asapModel.tblAuditComment">
+        <MappingFragment StoreEntitySet="tblAuditComments">
+          <ScalarProperty Name="AnsId" ColumnName="AnsId" />
+          <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+          <ScalarProperty Name="FieldNotes" ColumnName="FieldNotes" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="GivenScore" ColumnName="GivenScore" />
+          <ScalarProperty Name="PossibleScore" ColumnName="PossibleScore" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAudits">
+      <EntityTypeMapping TypeName="asapModel.tblAudit">
+        <MappingFragment StoreEntitySet="tblAudits">
+          <ScalarProperty Name="Audit_Id" ColumnName="Audit_Id" />
+          <ScalarProperty Name="AuditName" ColumnName="AuditName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModifiled" ColumnName="DateModifiled" />
+          <ScalarProperty Name="ChecklistID" ColumnName="ChecklistID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TabletAuditId" ColumnName="TabletAuditId" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="InspstatusId" ColumnName="InspstatusId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAuditStatus">
+      <EntityTypeMapping TypeName="asapModel.tblAuditStatu">
+        <MappingFragment StoreEntitySet="tblAuditStatus">
+          <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CorrectiveActionStatus" ColumnName="CorrectiveActionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="asapModel.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryCode" ColumnName="CategoryCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCheckLists">
+      <EntityTypeMapping TypeName="asapModel.tblCheckList">
+        <MappingFragment StoreEntitySet="tblCheckList">
+          <ScalarProperty Name="ChecklistID" ColumnName="ChecklistID" />
+          <ScalarProperty Name="CheckListName" ColumnName="CheckListName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ChecklistStatus" ColumnName="ChecklistStatus" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblChklstCntrlTypes">
+      <EntityTypeMapping TypeName="asapModel.tblChklstCntrlType">
+        <MappingFragment StoreEntitySet="tblChklstCntrlTypes">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="ControlCnt" ColumnName="ControlCnt" />
+          <ScalarProperty Name="ControlId" ColumnName="ControlId" />
+          <ScalarProperty Name="Inputs" ColumnName="Inputs" />
+          <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblControls">
+      <EntityTypeMapping TypeName="asapModel.tblControl">
+        <MappingFragment StoreEntitySet="tblControls">
+          <ScalarProperty Name="ControlId" ColumnName="ControlId" />
+          <ScalarProperty Name="Controlname" ColumnName="Controlname" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCorrectiveActionRevisions">
+      <EntityTypeMapping TypeName="asapModel.tblCorrectiveActionRevision">
+        <MappingFragment StoreEntitySet="tblCorrectiveActionRevision">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="CorrectiveActionId" ColumnName="CorrectiveActionId" />
+          <ScalarProperty Name="RevisionId" ColumnName="RevisionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCorrectiveActions">
+      <EntityTypeMapping TypeName="asapModel.tblCorrectiveAction">
+        <MappingFragment StoreEntitySet="tblCorrectiveActions">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="CorrectiveAction" ColumnName="CorrectiveAction" />
+          <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CompletedByDate" ColumnName="CompletedByDate" />
+          <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+          <ScalarProperty Name="VerificationDate" ColumnName="VerificationDate" />
+          <ScalarProperty Name="RootCause" ColumnName="RootCause" />
+          <ScalarProperty Name="ResultingAction" ColumnName="ResultingAction" />
+          <ScalarProperty Name="VerifiedBy" ColumnName="VerifiedBy" />
+          <ScalarProperty Name="VerifiedName" ColumnName="VerifiedName" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="NonUser" ColumnName="NonUser" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CorrectiveActionStatus" ColumnName="CorrectiveActionStatus" />
+          <ScalarProperty Name="CorrectiveActionRevisionStatus" ColumnName="CorrectiveActionRevisionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGroupHeaders">
+      <EntityTypeMapping TypeName="asapModel.tblGroupHeader">
+        <MappingFragment StoreEntitySet="tblGroupHeader">
+          <ScalarProperty Name="GroupHeaderId" ColumnName="GroupHeaderId" />
+          <ScalarProperty Name="GroupHeaderName" ColumnName="GroupHeaderName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="GrowerID" ColumnName="GrowerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGrowers">
+      <EntityTypeMapping TypeName="asapModel.tblGrower">
+        <MappingFragment StoreEntitySet="tblGrowers">
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="GrowerName" ColumnName="GrowerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="ClientContact" ColumnName="ClientContact" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModyfiedBy" ColumnName="ModyfiedBy" />
+          <ScalarProperty Name="ModyfiedDate" ColumnName="ModyfiedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblImages">
+      <EntityTypeMapping TypeName="asapModel.tblImage">
+        <MappingFragment StoreEntitySet="tblImages">
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+          <ScalarProperty Name="CorrectiveActonID" ColumnName="CorrectiveActonID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocations">
+      <EntityTypeMapping TypeName="asapModel.tblLocation">
+        <MappingFragment StoreEntitySet="tblLocations">
+          <ScalarProperty Name="Location_Id" ColumnName="Location_Id" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+          <ScalarProperty Name="Location_Title" ColumnName="Location_Title" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Location_Desc" ColumnName="Location_Desc" />
+          <ScalarProperty Name="GrowerId" ColumnName="GrowerId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNonUsers">
+      <EntityTypeMapping TypeName="asapModel.tblNonUser">
+        <MappingFragment StoreEntitySet="tblNonUser">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="NonUserId" ColumnName="NonUserId" />
+          <ScalarProperty Name="NonUser" ColumnName="NonUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestions">
+      <EntityTypeMapping TypeName="asapModel.tblQuestion">
+        <MappingFragment StoreEntitySet="tblQuestions">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="QuestionSeries" ColumnName="QuestionSeries" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CheckListId" ColumnName="CheckListId" />
+          <ScalarProperty Name="PossibleScore" ColumnName="PossibleScore" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="GroupHeaderID" ColumnName="GroupHeaderID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Guidance" ColumnName="Guidance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReportTypes">
+      <EntityTypeMapping TypeName="asapModel.tblReportType">
+        <MappingFragment StoreEntitySet="tblReportTypes">
+          <ScalarProperty Name="ReportTypeID" ColumnName="ReportTypeID" />
+          <ScalarProperty Name="ReportType" ColumnName="ReportType" />
+          <ScalarProperty Name="ReportDescription" ColumnName="ReportDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="asapModel.tblRole">
+        <MappingFragment StoreEntitySet="tblRoles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStates">
+      <EntityTypeMapping TypeName="asapModel.tblState">
+        <MappingFragment StoreEntitySet="tblStates">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTemps">
+      <EntityTypeMapping TypeName="asapModel.tblTemp">
+        <MappingFragment StoreEntitySet="tblTemp">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblThirdparty_types">
+      <EntityTypeMapping TypeName="asapModel.tblThirdparty_types">
+        <MappingFragment StoreEntitySet="tblThirdparty_types">
+          <ScalarProperty Name="thirdparty_type_id" ColumnName="thirdparty_type_id" />
+          <ScalarProperty Name="thirdparty_type_name" ColumnName="thirdparty_type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="asapModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Datecreated" ColumnName="Datecreated" />
+          <ScalarProperty Name="Datemodified" ColumnName="Datemodified" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ForgetPassword" ColumnName="ForgetPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
